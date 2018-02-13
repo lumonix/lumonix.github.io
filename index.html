@@ -1,7 +1,7 @@
 
 # attributes.h
 
-[#foo]: James T. Kajiya. 1986 ...
+[#mt_foo]: James T. Kajiya. 1986 ...
 
 Contains all attribute of an entity (e.g. shader)
 Param                   | Description
@@ -24,7 +24,7 @@ typedef struct mt_attributes {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## mt_create_attributes
-Extracts mt_attributes [#foo] values and names from json.
+Extracts mt_attributes [#mt_foo] values and names from json.
 This information can be used to build shader structs and attribute editor.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ C
 mt_attributes* mt_create_attributes(mt_ctx* mc, mt_json* js);
