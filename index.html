@@ -3,7 +3,7 @@
 Contains all attribute of an entity (e.g. shader)
 Param                   | Description
 ------------------------|---------------------------------------------------
-**cnt**`                | Number of attributes in struct
+**cnt**                 | Number of attributes in struct
 **types**               | Type for each attribute (e.g. MT_FLOAT_ATTR)
 **values**              | All values for all attr packed together
 **values_byte_offset**  | Byte-offset of each attr in **values**
@@ -18,6 +18,13 @@ typedef struct mt_attributes {
     size_t          values_num_bytes;
     char**          names;
 } mt_attributes;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extracts attribute [mt_attributes] values and names from json.
+This information can be used to build shader structs and attribute editor.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ C
+mt_attributes* mt_create_attributes(mt_ctx* mc, mt_json* js);
+void mt_destroy_attributes(mt_ctx* mc, mt_attributes** attr);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
