@@ -1,6 +1,7 @@
 
-[#mt_attributes]:
-Contains all attribute of an entity (e.g. shader)
+# attributes.h
+
+## mt_attributes: Contains all attribute of an entity (e.g. shader)
 Param                   | Description
 ------------------------|---------------------------------------------------
 **cnt**                 | Number of attributes in struct
@@ -21,7 +22,7 @@ typedef struct mt_attributes {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [#mt_create_attributes]:
-Extracts [#mt_attributes] values and names from json.
+Extracts mt_attributes subsection values and names from json.
 This information can be used to build shader structs and attribute editor.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ C
 mt_attributes* mt_create_attributes(mt_ctx* mc, mt_json* js);
