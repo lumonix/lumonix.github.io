@@ -1,12 +1,6 @@
-**Markdeep test**
-                           Kees Rijnen
-
-Basic Formatting
-=======================================================================================
-Text formatting:
 
 # mt_attributes
-contains all attribute of an entity (e.g. shader)
+Contains all attribute of an entity (e.g. shader)
 Param                   | Description
 ------------------------|---------------------------------------------------
 **cnt**`                | Number of attributes in struct
@@ -15,5 +9,15 @@ Param                   | Description
 **values_byte_offset**  | Byte-offset of each attr in **values**
 **values_num_bytes**    | Total size in bytes of **values**
 **names**               | Name of each attribute
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ C
+typedef struct mt_attributes {
+    size_t          cnt;
+    mt_attr_type*   types;
+    char*           values;
+    size_t*         values_byte_offset;
+    size_t          values_num_bytes;
+    char**          names;
+} mt_attributes;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
