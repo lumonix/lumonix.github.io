@@ -5,13 +5,15 @@ Basic Formatting
 =======================================================================================
 Text formatting:
 
-    Source                               |     Result
------------------------------------------|------------------------------
-`**bold**`                               | **bold**
-`__bold__`                               | __bold__
-`*italic*`                               | *italic*
-`_italic_`                               | _italic_
-`~~strikethrough~~`                      | ~~strikethrough~~
-<code>`inline code`</code>               | `inline code`
+# mt_attributes
+contains all attribute of an entity (e.g. shader)
+Param                   | Description
+------------------------|---------------------------------------------------
+**cnt**`                | Number of attributes in struct
+**types**               | Type for each attribute (e.g. MT_FLOAT_ATTR)
+**values**              | All values for all attr packed together
+**values_byte_offset**  | Byte-offset of each attr in **values**
+**values_num_bytes**    | Total size in bytes of **values**
+**names**               | Name of each attribute
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
