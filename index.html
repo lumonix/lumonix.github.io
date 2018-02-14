@@ -1,7 +1,7 @@
 # attributes.h
 
-/// [#mt_attr_type]:
-/// Supported types for attributes
+ [#mt_attr_type]:
+ Supported types for attributes
 ~~~~~~~~c
 typedef enum mt_attr_type {
     MT_NO_VALUE,
@@ -12,17 +12,17 @@ typedef enum mt_attr_type {
 } mt_attr_type;
 ~~~~~~~~
 
-/// [#mt_attributes]:
-/// Contains all attribute of an entity (e.g. shader)
-///
-/// Param                   | Description
-/// ------------------------|---------------------------------------------------
-/// **cnt**                 | Number of attributes in struct
-/// **types**               | Type for each attribute [#mt_attr_type]
-/// **values**              | All values for all attr packed together
-/// **values_byte_offset**  | Byte-offset of each attr in **values**
-/// **values_num_bytes**    | Total size in bytes of **values**
-/// **names**               | Name of each attribute
+ [#mt_attributes]:
+ Contains all attribute of an entity (e.g. shader)
+
+ Param                   | Description
+ ------------------------|---------------------------------------------------
+ **cnt**                 | Number of attributes in struct
+ **types**               | Type for each attribute [#mt_attr_type]
+ **values**              | All values for all attr packed together
+ **values_byte_offset**  | Byte-offset of each attr in **values**
+ **values_num_bytes**    | Total size in bytes of **values**
+ **names**               | Name of each attribute
 ~~~~~~~~c
 typedef struct mt_attributes {
     size_t          cnt;
@@ -34,10 +34,10 @@ typedef struct mt_attributes {
 } mt_attributes;
 ~~~~~~~~
 
-/// [#mt_create_attributes]:
-/// Extracts attribute values and names from json into a [#mt_attributes].
-/// This information can be used to build shader structs and attribute editor.
-/// Use mt_destroy_attributes to cleanup.
+ [#mt_create_attributes]:
+ Extracts attribute values and names from json into a [#mt_attributes].
+ This information can be used to build shader structs and attribute editor.
+ Use mt_destroy_attributes to cleanup.
 ~~~~~~~~c
 mt_attributes* mt_create_attributes(mt_ctx* mc, mt_json* js);
 void mt_destroy_attributes(mt_ctx* mc, mt_attributes** attr);
