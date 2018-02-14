@@ -2,7 +2,7 @@
 
 [#mt_attr_type]: 
 Supported types for attributes
-~~~c
+~~~~~~~~c
 typedef enum mt_attr_type {
    MT_NO_VALUE,
    MT_BOOL_ATTR,
@@ -10,7 +10,7 @@ typedef enum mt_attr_type {
    MT_FLOAT4_ATTR,
    MT_VALUE_END
 } mt_attr_type;
-~~~
+~~~~~~~~
 
 <BR><BR>
 [#mt_attributes]: 
@@ -44,6 +44,9 @@ Use mt_destroy_attributes to cleanup.
 mt_attributes* mt_create_attributes(mt_ctx* mc, mt_json* js);
 void mt_destroy_attributes(mt_ctx* mc, mt_attributes** attr);
 ~~~~~~~~
+
+<BR><BR>
+
 
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
