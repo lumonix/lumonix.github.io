@@ -245,12 +245,10 @@ const Preloader = /** @constructor */ function () { // eslint-disable-line no-un
 		if (typeof pathOrBuffer === 'string') {
 			const me = this;
 			return this.loadPromise(pathOrBuffer, fileSize).then(function (buf) {
-				buf.arrayBuffer().then(data => {
-					me.preloadedFiles.push({
-						path: destPath || pathOrBuffer,
-						buffer: data,
-					});
-				})
+				me.preloadedFiles.push({
+					path: destPath || pathOrBuffer,
+					buffer: buf,
+				});
 				return Promise.resolve();
 			});
 		} else if (pathOrBuffer instanceof ArrayBuffer) {
