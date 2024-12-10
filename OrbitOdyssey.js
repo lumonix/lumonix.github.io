@@ -162,7 +162,7 @@ const Preloader = /** @constructor */ function () { // eslint-disable-line no-un
 			done: false,
 		};
 
-		if (file.endsWith(".wasm")) {
+		if (file.endsWith(".wasm") || file.endsWith(".pck")) {
 			file += ".gz"
 		}
 
@@ -245,10 +245,12 @@ const Preloader = /** @constructor */ function () { // eslint-disable-line no-un
 		if (typeof pathOrBuffer === 'string') {
 			const me = this;
 			return this.loadPromise(pathOrBuffer, fileSize).then(function (buf) {
-				me.preloadedFiles.push({
-					path: destPath || pathOrBuffer,
-					buffer: buf,
-				});
+				buf.arrayBuffer().then(data => {
+					me.preloadedFiles.push({
+						path: destPath || pathOrBuffer,
+						buffer: data,
+					});
+				})
 				return Promise.resolve();
 			});
 		} else if (pathOrBuffer instanceof ArrayBuffer) {
