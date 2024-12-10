@@ -162,7 +162,7 @@ const Preloader = /** @constructor */ function () { // eslint-disable-line no-un
 			done: false,
 		};
 
-		if (file.endsWith(".wasm") || file.endsWith(".pck")) {
+		if (file.endsWith(".wasm")) {
 			file += ".gz"
 		}
 
