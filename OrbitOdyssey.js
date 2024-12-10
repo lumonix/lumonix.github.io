@@ -245,10 +245,12 @@ const Preloader = /** @constructor */ function () { // eslint-disable-line no-un
 		if (typeof pathOrBuffer === 'string') {
 			const me = this;
 			return this.loadPromise(pathOrBuffer, fileSize).then(function (buf) {
-				me.preloadedFiles.push({
-					path: destPath || pathOrBuffer,
-					buffer: buf,
-				});
+				buf.arrayBuffer().then(data => {
+					me.preloadedFiles.push({
+						path: destPath || pathOrBuffer,
+						buffer: data,
+					});
+				})
 				return Promise.resolve();
 			});
 		} else if (pathOrBuffer instanceof ArrayBuffer) {
@@ -265,7 +267,6 @@ const Preloader = /** @constructor */ function () { // eslint-disable-line no-un
 		}
 		return Promise.reject(new Error('Invalid object for preloading'));
 	};
-};
 
 /**
  * An object used to configure the Engine instance based on godot export options, and to override those in custom HTML
